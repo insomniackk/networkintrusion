@@ -80,4 +80,20 @@ pip install pandas scikit-learn umap-learn matplotlib plotly
 
 ---
 
+## Real World Impact
+
+DDoS attacks are one of the most disruptive and frequently used cyberattack vectors in both civilian and defense contexts. In 2023 alone, DDoS attacks increased by over 200% globally, targeting critical infrastructure including power grids, military networks, financial systems, and government communications.
+
+In defense contexts specifically, the ability to automatically detect and flag anomalous network traffic in real time is vital. A compromised military network or overwhelmed command-and-control system can have direct operational consequences. Manual detection is not viable at scale when dealing with millions of network connections per hour.
+
+This system addresses that gap by:
+
+Automating threat detection — no manual review needed, the model flags attacks instantly
+Generalizing across attack types — the same pipeline works on DDoS, Brute Force, DoS, and Web Attacks by loading different CICIDS files
+Providing explainability — the feature importance breakdown tells operators exactly which network signals triggered the detection, important in high stakes environments where decisions need to be justified
+Scaling to large datasets — tested on 225,000+ real network connections with sub-minute inference time
+
+The UMAP visualization adds an additional layer of value for defense analysts — rather than a black box prediction, operators can visually confirm that attack traffic is structurally distinct from normal traffic.
+
+--
 Contact nkmar@bu.edu for any questions.
