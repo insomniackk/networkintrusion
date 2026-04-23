@@ -1,6 +1,6 @@
 # Network Intrusion Detection System
 
-A machine learning pipeline that detects DDoS attacks in real network traffic using Random Forest classification and UMAP dimensionality reduction. Built on the CICIDS2017 dataset — the same unsupervised anomaly detection methodology I applied to ultrasound image filtering in medical imaging research, extended to a cybersecurity context.
+A machine learning pipeline that detects DDoS attacks in real network traffic using Random Forest classification and UMAP dimensionality reduction. Built on the CICIDS2017 dataset.
 
 ---
 
@@ -26,13 +26,13 @@ A machine learning pipeline that detects DDoS attacks in real network traffic us
 | Samples | 19,419 | 25,724 |
 | **Overall Accuracy** | **99.99%** | |
 
-**Top discriminative feature:** `init_win_bytes_forward` (initial TCP window size) — consistent with known DDoS attack behavior where attackers manipulate TCP handshake parameters to flood connections.
+**Top discriminative feature:** `init_win_bytes_forward` (initial TCP window size), which is consistent with known DDoS attack behavior where attackers manipulate TCP handshake parameters to flood connections.
 
 ---
 
 ## Why the model works
 
-DDoS attacks are repetitive by nature — thousands of machines doing the exact same thing simultaneously creates a distinct mathematical fingerprint in network traffic. The UMAP projection confirms this: attack traffic (red) and normal traffic (blue) occupy completely separate regions in feature space with no overlap, which is why the classifier achieves perfect separation.
+DDoS attacks are repetitive by nature. Thousands of machines doing the exact same thing simultaneously creates a distinct mathematical fingerprint in network traffic. The UMAP projection confirms this: attack traffic (red) and normal traffic (blue) occupy completely separate regions in feature space with no overlap, which is why the classifier achieves perfect separation.
 
 Normal traffic is more spread out because browsing, streaming, and downloading all produce different network signatures. Attack traffic clusters tightly because it's fundamentally repetitive flooding behavior.
 
